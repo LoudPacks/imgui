@@ -2,6 +2,8 @@
 project "ImGui"
   kind "StaticLib"
   language "C++"
+  cppdialect "C++17"
+  staticruntime "On"
   
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -17,14 +19,12 @@ project "ImGui"
     "imstb_rectpack.h",
     "imstb_textedit.h",
     "imstb_truetype.h",
-    "imgui_demo.cpp"
+    "imgui_demo.cpp",
+    "imgui_tables.cpp"
   }
   
   filter "system:windows"
     systemversion "latest"
-    cppdialect "C++17"
-    staticruntime "On"
-    buildoptions "/MT"
   
   filter "system:linux"
     pic "On"
