@@ -24,6 +24,7 @@ project "ImGui"
     systemversion "latest"
     cppdialect "C++17"
     staticruntime "On"
+    buildoptions "/MT"
   
   filter "system:linux"
     pic "On"
